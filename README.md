@@ -1,55 +1,61 @@
-# Makimiso CMS Project
+# 🚀 Getting started with Strapi
 
-## Overview
-Adding a simple, cost-effective headless CMS to the existing Makimiso website (www.makimiso.com) for blog and portfolio functionality.
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
-## Current Setup
-- **Main Website**: Static HTML site hosted on GitHub Pages
-- **Domain**: www.makimiso.com
-- **Repository**: https://github.com/upcollective/makimiso.github.io
-- **Current Pages**: Home, About, Services, Contact
+### `develop`
 
-## Technical Goals
-- **CMS**: Strapi (self-hosted, open-source)
-- **Database**: Supabase (free tier)
-- **Deployment**: Docker containers
-- **Integration**: API-based content fetching for existing site
-- **Budget**: Stay within free tiers + minimal hosting costs ($5-12/month)
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-## Content Types Needed
-1. **Blog Posts**
-   - Title, content, excerpt, featured image
-   - Publication date, tags, categories
-   - SEO metadata
-
-2. **Portfolio Items**
-   - Project title, description, images
-   - Client, date, technologies used
-   - Case study content
-
-3. **Team/About Content** (optional)
-   - Team member profiles
-   - Company updates
-
-## Project Structure
 ```
-makimiso-cms/
-├── docker/              # Docker configuration
-├── strapi/              # Strapi configuration
-├── integration/         # API integration code
-├── docs/               # Documentation
-└── env/                # Environment files (gitignored)
+npm run develop
+# or
+yarn develop
 ```
 
-## Implementation Phases
-1. **Backend Setup**: Strapi + Supabase connection
-2. **Content Modeling**: Create content types
-3. **API Integration**: Connect to existing website
-4. **Deployment**: Docker hosting setup
+### `start`
 
-## Key Requirements
-- Keep it simple and practical
-- Avoid overengineering
-- Maintain existing site structure
-- Enable easy content management
-- Self-hosted and controlled
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+
+```
+npm run start
+# or
+yarn start
+```
+
+### `build`
+
+Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+
+```
+npm run build
+# or
+yarn build
+```
+
+## ⚙️ Deployment
+
+Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+
+```
+yarn strapi deploy
+```
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>

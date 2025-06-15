@@ -6,14 +6,14 @@ WORKDIR /opt/app
 # Install curl for health checks
 RUN apk add --no-cache curl
 
-# Copy package files from strapi-data directory
-COPY strapi-data/package*.json ./
+# Copy package files
+COPY package*.json ./
 
-# Install dependencies including pg for PostgreSQL
-RUN npm ci --only=production && npm install pg
+# Install dependencies
+RUN npm ci --only=production
 
 # Copy all Strapi application files
-COPY strapi-data/ ./
+COPY . ./
 
 # Build Strapi admin panel
 RUN npm run build
