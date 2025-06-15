@@ -4,7 +4,7 @@
  */
 
 // Configuration
-const CMS_BASE_URL = 'http://localhost:1337'; // Change to your production URL when deployed
+const CMS_BASE_URL = 'https://makimiso-cms-production.up.railway.app'; // Production Railway URL
 const API_URL = `${CMS_BASE_URL}/api`;
 
 /**
