@@ -1,34 +1,32 @@
-# Dockerfile for Strapi v4 with Node.js 18
+# Railway Dockerfile for Strapi v5
 FROM node:18-alpine
 
-# Set environment variables
-ENV NODE_ENV=development
-
-# Set working directory
 WORKDIR /opt/app
 
-# Copy package.json and package-lock.json if they exist
-COPY package*.json ./
+# Install curl for health checks
+RUN apk add --no-cache curl
 
-# Install Strapi globally
-RUN npm install -g @strapi/strapi@latest
+# Copy package files from strapi-data directory
+COPY strapi-data/package*.json ./
 
-# Install PostgreSQL driver globally for availability
-RUN npm install -g pg
+# Install dependencies including pg for PostgreSQL
+RUN npm ci --only=production && npm install pg
 
-# Create app directory structure
-RUN mkdir -p /opt/app
+# Copy all Strapi application files
+COPY strapi-data/ ./
 
-# Set proper permissions
-RUN chown -R node:node /opt/app
-USER node
+# Build Strapi admin panel
+RUN npm run build
+
+# Create uploads directory
+RUN mkdir -p public/uploads
 
 # Expose port
 EXPOSE 1337
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:1337/admin || exit 1
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+  CMD curl -f http://localhost:1337/_health || exit 1
 
-# Default command - will be overridden by docker-compose
-CMD ["strapi", "develop"]
+# Start Strapi
+CMD ["npm", "run", "start"]
