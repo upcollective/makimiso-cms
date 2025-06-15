@@ -1,0 +1,19 @@
+{
+  "name": "makimiso-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Makimiso CMS for Railway deployment",
+  "scripts": {
+    "prebuild": "cd strapi-data && npm install",
+    "build": "cd strapi-data && npm run build",
+    "start": "cd strapi-data && npm run start",
+    "develop": "cd strapi-data && npm run develop"
+  },
+  "dependencies": {
+    "pg": "^8.11.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
