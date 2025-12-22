@@ -15,10 +15,11 @@
       "type": "string"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "title"
     },
     "content": {
-      "type": "blocks"
+      "type": "richtext"
     },
     "excerpt": {
       "type": "string"
@@ -39,8 +40,8 @@
     "tags": {
       "type": "json"
     },
-    "published": {
-      "type": "boolean"
+    "author": {
+      "type": "string"
     }
   }
 }
