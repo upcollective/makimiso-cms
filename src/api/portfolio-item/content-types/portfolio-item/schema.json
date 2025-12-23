@@ -64,6 +64,25 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "Challenge": {
+      "type": "blocks"
+    },
+    "Solution": {
+      "type": "blocks"
+    },
+    "Results": {
+      "type": "blocks"
+    },
+    "Tags": {
+      "type": "string"
+    },
+    "IsFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "Order": {
+      "type": "integer"
     }
   }
 }

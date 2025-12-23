@@ -424,6 +424,7 @@ export interface ApiPortfolioItemPortfolioItem
   };
   attributes: {
     case_study_content: Schema.Attribute.Blocks;
+    Challenge: Schema.Attribute.Blocks;
     client: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -432,19 +433,24 @@ export interface ApiPortfolioItemPortfolioItem
     description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     featured_image: Schema.Attribute.Media<'images' | 'files'>;
     images: Schema.Attribute.Media<'images' | 'files', true>;
+    IsFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::portfolio-item.portfolio-item'
     > &
       Schema.Attribute.Private;
+    Order: Schema.Attribute.Integer;
     project_url: Schema.Attribute.String;
     published: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     publishedAt: Schema.Attribute.DateTime;
+    Results: Schema.Attribute.Blocks;
     short_description: Schema.Attribute.Text & Schema.Attribute.Required;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    Solution: Schema.Attribute.Blocks;
+    Tags: Schema.Attribute.String;
     technologies: Schema.Attribute.JSON;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
