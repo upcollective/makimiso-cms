@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "Contact",
+    "description": "Form submissions from the website contact form"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "email",
+      "required": true
+    },
+    "Organization": {
+      "type": "string"
+    },
+    "ProjectType": {
+      "type": "string"
+    },
+    "Budget": {
+      "type": "string"
+    },
+    "Message": {
+      "type": "text"
+    },
+    "Source": {
+      "type": "string",
+      "default": "Website Contact Form"
+    },
+    "SubmittedAt": {
+      "type": "datetime"
+    }
+  }
+}
